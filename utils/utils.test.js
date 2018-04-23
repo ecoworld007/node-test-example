@@ -7,9 +7,23 @@ it('Should add numbers', () => {
     expect(res).toBeA('number').toBe(7);
 });
 
+it('Should async add two number', (done) => {
+    utils.asynAdd(5,2,(res) => {
+        expect(res).toBeA('number').toBe(7);
+        done();
+    })
+});
+
 it('Should square number', () => {
     let res = utils.square(5);
     expect(res).toBeA('number').toBe(25);
+});
+
+it('Should async square number', (done) => {
+    utils.asynSquare(5,(res) => {
+        expect(res).toBeA('number').toBe(25);
+        done();
+    })
 });
 
 it('Should set proper name for user', () => {
